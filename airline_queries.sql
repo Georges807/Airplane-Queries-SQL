@@ -1,5 +1,5 @@
 -- 1) Display the name and the capacity of the AIRBUS planes.
---    (Plane’s description that starts with A->AIRBUS,  B->BOEING,C->CONCORDE). 
+--    (Planeâ€™s description that starts with A->AIRBUS,  B->BOEING,C->CONCORDE). 
 
 SELECT PLA_DESC, MAX_PASSENGER
 FROM PLANE
@@ -37,7 +37,7 @@ JOIN FLIGHT ON PILOT.PILOT_ID = FLIGHT.PILOT_ID
 JOIN PLANE ON FLIGHT.PLA_ID = PLANE.PLA_ID
 WHERE PLANE.PLA_DESC LIKE 'B%'
 
--- 6) Display the pilots (id and name) who earn the same salary as PETERS’s or LAHRIRE’s salary.
+-- 6) Display the pilots (id and name) who earn the same salary as PETERSâ€™s or LAHRIREâ€™s salary.
 
 SELECT PILOT_ID, LAST_NAME, FIRST_NAME, SALARY
 FROM PILOT
@@ -121,7 +121,7 @@ WHERE PILOT_ID NOT IN (
 
 SELECT * FROM PILOTS_WITH_NO_FLIGHTS
 
--- 13) Create a view which returns the pilot’s id, his name, his salary as well as the plane’s description
+-- 13) Create a view which returns the pilotâ€™s id, his name, his salary as well as the planeâ€™s description
 --     that he pilots
 
 CREATE VIEW PILOT_PLANE_INFO AS
@@ -130,7 +130,7 @@ FROM PILOT
 JOIN FLIGHT ON PILOT.PILOT_ID = FLIGHT.PILOT_ID
 JOIN PLANE ON FLIGHT.PLA_ID = PLANE.PLA_ID
 
--- 14) Display the pilot’s id and name, his piloting frequency. piloting frequency is the number of flight.
+-- 14) Display the pilotâ€™s id and name, his piloting frequency. piloting frequency is the number of flight.
 
 SELECT P.PILOT_ID, P.LAST_NAME, P.FIRST_NAME, COUNT(F.FLIGHT_ID) AS count
 FROM PILOT P
